@@ -1,0 +1,61 @@
+{
+  "app": {
+    "server_name": "_",
+    "listen": "8080",
+    "name": "riauditor",
+    "dir": "/riauditor",
+    "env": "development",
+    "nginx": {
+      "vhosts_dir": "",
+      "user": ""
+    }
+  },
+  "user": {
+    "name": "vagrant"
+  },
+  "nginx": {
+    "version": "1.5.7",
+    "log_dir": "/var/log/nginx",
+    "user": "www-data",
+    "init_style": "init",
+    "install_method": "source",
+    "client_max_body_size": "1m",
+    "port": "8080",
+    "source": {
+      "modules": [
+        "nginx::http_stub_status_module",
+        "nginx::http_gzip_static_module",
+        "nginx::passenger"
+      ]
+    },
+    "passenger": {
+      "version": "4.0.29",
+      "ruby": "/home/vagrant/.rbenv/versions/2.1.0/bin/ruby",
+      "root": "/home/vagrant/.rbenv/versions/2.1.0/lib/ruby/gems/2.1.0/gems/passenger-4.0.29/"
+    }
+  },
+  "mysql": {
+    "server_debian_password": "admin",
+    "server_root_password": "admin",
+    "server_repl_password": "admin"
+  },
+  "rbenv": {
+    "user_installs": [
+      {
+        "user": "vagrant",
+        "rubies": ["2.1.0"],
+        "global": "2.1.0",
+        "gems": {
+          "2.1.0": [
+            {"name": "bundler"},
+            {"name": "passenger", "version": "4.0.29"}
+          ]
+        }
+      }
+    ]
+  },
+  "run_list": [
+    "recipe[riauditor::vagrant]",
+    "recipe[riauditor::app]"
+  ]
+}

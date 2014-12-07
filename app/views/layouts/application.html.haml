@@ -1,0 +1,36 @@
+!!!
+%html
+  %head
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,200,700' rel='stylesheet' type='text/css'>
+    %title AWS RI Auditor
+    %meta{content: "width=device-width, user-scalable=no, initial-scale=1.0", name: "viewport"}/
+
+
+    :javascript
+      if (window.devicePixelRatio > 1) {
+        var elHtml = document.getElementsByTagName('html')[0];
+        var atrClass = elHtml.getAttribute('class');
+        atrClass = atrClass + ' retina';
+
+        elHtml.setAttribute('class', atrClass); //For Most Browsers
+        //elHtml.setAttribute('className', atrClass); //For IE; harmless to other brow
+      }
+
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => false
+    = csrf_meta_tags
+
+  %body
+    #top-grid.grid
+      .unit.whole
+        %h1
+          AWS Reserved Instace Auditor
+
+    = yield
+
+    %footer
+      .grid
+        .unit.half
+          This is so BETA!
+        .unit.half
+          Created by Gustavo G. at ArchDaily.com

@@ -1,0 +1,14 @@
+.grid
+  .unit.half
+    %h1 Edit account
+    = render 'form'
+
+
+  .unit.half
+    = render :partial => "howto"
+    
+.grid
+  .unit.whole
+    = link_to 'Show', @account
+    \|
+    = link_to 'Back', accounts_path

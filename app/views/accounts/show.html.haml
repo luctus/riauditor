@@ -1,0 +1,23 @@
+.grid
+  .unit.whole
+    %p#notice= notice
+.grid
+  .unit.half
+    %h2 Account Details
+    %p
+      %b Name:
+      = @account.name
+    %p
+      %b Access key:
+      = @account.access_key_id
+    %p
+      %b Secret access key:
+      = @account.secret_access_key
+
+    = link_to 'Edit', edit_account_path(@account)
+    \|
+    = link_to 'Back', accounts_path
+
+  .unit.half
+    %h2 What's next?
+    = link_to 'Run the auditor', edit_account_path(@account)

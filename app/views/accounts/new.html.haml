@@ -1,0 +1,12 @@
+.grid
+  .unit.half
+    %h1 New account
+    = render 'form'
+
+
+  .unit.half
+    = render :partial => "howto"
+
+.grid
+  .unit.whole
+    = link_to 'Back', accounts_path

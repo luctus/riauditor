@@ -24,10 +24,12 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'haml'
+gem 'aws-sdk'
 
 group :development, :test do
+  gem 'haml-rails'
   gem 'sqlite3'
-  gem "poltergeist"
+  gem 'poltergeist'
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'factory_girl_rails'
   gem 'pry-rails'

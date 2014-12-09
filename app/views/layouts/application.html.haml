@@ -21,16 +21,17 @@
     = csrf_meta_tags
 
   %body
-    #top-grid.grid
-      .unit.whole
-        %h1
-          AWS Reserved Instace Auditor
+    #wrapper
+      #header.grid
+        .unit.whole
+          %h1
+            AWS Reserved Instace Auditor
+      #content.wider
+        = yield
 
-    = yield
-
-    %footer
-      .grid
-        .unit.half
-          This is so BETA!
-        .unit.half
-          Created by Gustavo G. at ArchDaily.com
+      #footer
+        .grid
+          .unit.half
+            This is so BETA!
+          .unit.half
+            Created by Gustavo G. at ArchDaily.com

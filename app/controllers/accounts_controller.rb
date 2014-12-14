@@ -64,10 +64,10 @@ class AccountsController < ApplicationController
   def audit
     @instances = Rails.cache.fetch("/#{@account.id}/instances", expires_in: 60.minutes){
       @account.get_instances
-    }
+    }.sort.to_h
     @reserved_instances = Rails.cache.fetch("/#{@account.id}/reserved_instances", expires_in: 60.minutes){
       @account.get_reserved_instances
-    }
+    }.sort.to_h
     @audited_reserved_instances = @account.audit(@instances, @reserved_instances)
   end
 

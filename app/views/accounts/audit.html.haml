@@ -10,12 +10,15 @@
         %th availability zone
         %th instance type
         %th count
+        %th reserved
       - @instances.each do |az, by_type|
         - by_type.each do |type, count|
           %tr
             %td= az
             %td= type
             %td= count
+            %td= "#{(@reserved_instances[az][type] rescue 0).to_i}"
+
   .unit.half
     %h2 Reserved Instances
     %table

@@ -1,10 +1,10 @@
 .grid
   .unit.whole
-    %h1 Auditing #{@account.name}
+    %h2 Auditing #{@account.name}
 
 .grid
   .unit.half
-    %h2 Running instances
+    %h3 Running instances
     %table
       %tr
         %th availability zone
@@ -28,7 +28,7 @@
                 = "Alert!"
 
   .unit.half
-    %h2 Reserved Instances
+    %h3 Reserved Instances
     %table
       %tr
         %th availability zone
@@ -54,3 +54,7 @@
                 = "Perfect!"
               - else
                 = "Reserve #{-1*@audited_reserved_instances[az][type]} more!"
+
+.grid
+  .unit.whole
+    = link_to 'Back', account_path(@account)

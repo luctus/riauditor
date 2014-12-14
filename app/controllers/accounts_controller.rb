@@ -1,5 +1,5 @@
 class AccountsController < ApplicationController
-  before_action :set_account, only: [:show, :edit, :update, :destroy]
+  before_action :set_account, only: [:show, :edit, :update, :destroy, :audit]
 
   # GET /accounts
   # GET /accounts.json
@@ -59,6 +59,16 @@ class AccountsController < ApplicationController
       format.html { redirect_to accounts_url, notice: 'Account was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def audit
+    @instances = Rails.cache.fetch("/#{@account.id}/instances", expires_in: 60.minutes){
+      @account.get_instances
+    }
+    @reserved_instances = Rails.cache.fetch("/#{@account.id}/reserved_instances", expires_in: 60.minutes){
+      @account.get_reserved_instances
+    }
+    @audited_reserved_instances = @account.audit(@instances, @reserved_instances)
   end
 
   private

@@ -1,0 +1,37 @@
+.grid
+  .unit.whole
+    %h1 Auditing @account.name
+
+.grid
+  .unit.half
+    %h2 Running instances
+    %table
+      %tr
+        %th availability zone
+        %th instance type
+        %th count
+      - @instances.each do |az, by_type|
+        - by_type.each do |type, count|
+          %tr
+            %td= az
+            %td= type
+            %td= count
+  .unit.half
+    %h2 Reserved Instances
+    %table
+      %tr
+        %th availability zone
+        %th instance type
+        %th reserved
+        %th not used
+      - @reserved_instances.each do |az, by_type|
+        - by_type.each do |type, count|
+          %tr
+            %td= az
+            %td= type
+            %td= count
+            %td
+              - if @audited_reserved_instances[az][type] >= 0
+                = @audited_reserved_instances[az][type]
+              - else
+                = "0 (buy #{-1*@audited_reserved_instances[az][type]} more!)"

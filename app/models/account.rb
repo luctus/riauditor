@@ -33,4 +33,16 @@ class Account < ActiveRecord::Base
     end
     az
   end
+
+  def audit(instances, reserved_instances)
+    response = reserved_instances.deep_dup
+    instances.each do |az, by_type|
+      next unless reserved_instances.key? (az)
+      by_type.each do |type, count|
+        next unless reserved_instances[az].key? (type)
+        response[az][type] -= count
+      end
+    end
+    response
+  end
 end

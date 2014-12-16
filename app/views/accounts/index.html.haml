@@ -1,7 +1,7 @@
 .grid
   .unit.three-quarters
     %h1 Registered Accounts
-  .unit.one-quarter
+  .unit.one-quarter.text-right
     = link_to 'New Account', new_account_path
 
 .grid
@@ -14,7 +14,3 @@
         = link_to 'Audit', audit_account_path(account)
         = link_to 'Edit', edit_account_path(account)
         = link_to 'Destroy', account, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-.grid
-  .unit.whole
-    = link_to 'New Account', new_account_path

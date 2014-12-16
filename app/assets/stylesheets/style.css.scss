@@ -24,7 +24,7 @@ a:hover{
 }
 #header {
   padding: 10px;
-  border-bottom: 2px solid rgb(221, 83, 99);
+  border-bottom: 1px solid rgb(221, 83, 99);
   color: white;
 }
 #content {
@@ -38,7 +38,7 @@ a:hover{
   position:absolute;
   bottom:0;
   left:0;
-  color: #eee;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 /*Typography*/

@@ -6,12 +6,12 @@
   .unit.half
     %h3 Running instances
     %table
-      %tr
-        %th availability zone
-        %th instance type
-        %th count
-        %th reserved
-        %th comments
+      %tr.text-left
+        %th Availability Zone
+        %th Instance Type
+        %th Count
+        %th Reserved
+        %th Comments
       - @instances.each do |az, by_type|
         - by_type.each do |type, count|
           %tr
@@ -30,12 +30,12 @@
   .unit.half
     %h3 Reserved Instances
     %table
-      %tr
-        %th availability zone
-        %th instance type
-        %th reserved
-        %th not used
-        %th comments
+      %tr.text-left
+        %th Availability Zone
+        %th Instance Type
+        %th Reserved
+        %th Not used
+        %th Comments
       - @reserved_instances.each do |az, by_type|
         - by_type.each do |type, count|
           %tr

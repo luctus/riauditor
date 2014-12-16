@@ -6,10 +6,17 @@ body {
 }
 body {
   font-family: sans-serif, 'Helvetica Neue';
-  background-color: #fff;
-  color: #333;
+  background-color: rgb(221, 83, 99);
+  background-image: url(image_path('bg.jpg'));
+  color: #eee;
   font-size: 13px;
   line-height: 1.5em;
+}
+a{
+  color: #fff;
+}
+a:hover{
+  color: #ddd;
 }
 #wrapper {
   min-height:100%;
@@ -17,13 +24,12 @@ body {
 }
 #header {
   padding: 10px;
-  background: #49007E;
-  border-bottom: 5px solid #FF005B;
+  border-bottom: 2px solid rgb(221, 83, 99);
   color: white;
 }
 #content {
   padding:10px;
-  padding-bottom:80px;   /* Height of the footer element */
+  padding-bottom:115px;   /* Height of the footer element */
 }
 #footer {
   width:100%;
@@ -32,7 +38,6 @@ body {
   position:absolute;
   bottom:0;
   left:0;
-  background: #333;
   color: #eee;
 }
 
@@ -45,6 +50,10 @@ h2{
   font-family: 'Raleway';
   font-weight: 400;
 }
+h3{
+  font-family: 'Raleway';
+  font-weight: 400;
+}
 .text-left {text-align:left;}
 .text-center {text-align:center;}
 .text-right {text-align:right;}
@@ -54,12 +63,29 @@ h2{
 /*Tables*/
 
 table {
-  margin-bottom: 60px;
   border-top: 1px solid #f1f1f1;
-  border-bottom: 1px solid #f1f1f1;
   td,th {
     padding: 7px 15px;
   }
-  tr:nth-child(even) {background: #f1f1f1;}
-  tr:nth-child(odd) {background: #FFF;}
+  th{
+    background: rgba(255, 255, 255, 0.1);
+  }
+  tr:nth-child(odd) {
+    background: rgba(255, 255, 255, 0.05);
+  }
+  /*tr:nth-child(odd) {background: #FFF;}*/
+}
+
+/*Forms*/
+label{
+  display: block;
+}
+input[type="text"]{
+  background: rgba(255, 255, 255, 0.2);
+  border: 0px;
+  padding: 5px;
+  color: #fff;
+  font-size: 1.5em;
+  width: 80%;
+  margin-bottom: 10px;
 }

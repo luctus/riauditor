@@ -40,7 +40,12 @@ a:hover{
   left:0;
   color: rgba(255, 255, 255, 0.3);
 }
-
+.alert{
+  padding: 10px;
+}
+.notice{
+  padding: 10px;
+}
 /*Typography*/
 h1{
   font-family: 'Raleway';
@@ -80,7 +85,7 @@ table {
 label{
   display: block;
 }
-input[type="text"]{
+input[type="text"], input[type="email"], input[type="password"]{
   background: rgba(255, 255, 255, 0.2);
   border: 0px;
   padding: 5px;
@@ -89,4 +94,11 @@ input[type="text"]{
   width: 80%;
   margin-bottom: 10px;
   font-weight: lighter;
+}
+input[type="submit"], .button{
+  background: rgb(100, 52, 68);
+  color: white;
+  padding: 10px 30px;
+  border: 0;
+  text-decoration: none;
 }

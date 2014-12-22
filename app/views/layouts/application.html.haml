@@ -23,10 +23,22 @@
   %body
     #wrapper.wider
       #header.grid
-        .unit.whole
+        .unit.two-thirds
           %h1
             AWS Reserved Instaces Auditor
+        .unit.one-third.text-right
+          - if user_signed_in?
+            #current_user
+              %p.user= current_user.email
+              = link_to 'Sign out', destroy_user_session_path, method: :delete, class:'foo'
       #content
+        - if notice || alert
+          .grid
+            .unit.whole
+              - if notice
+                %p.notice= ":) #{notice}"
+              - if alert
+                %p.alert= ":( #{alert}"
         = yield
 
       #footer

@@ -8,7 +8,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provider :virtualbox do |vb|
     vb.customize ["modifyvm", :id, "--memory", "2048"]
-    vb.customize ["modifyvm", :id, "--name", "RI Auditor"]
+    vb.customize ["modifyvm", :id, "--name", "RIAuditor"]
     vb.customize ["modifyvm", :id, "--natdnsproxy1", "off"]
   end
 
@@ -17,7 +17,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.hostname = "riauditor"
 
   config.vm.network :private_network, ip: "33.33.33.112"
-  config.vm.network :forwarded_port, host: 3000, guest: 3001
+  config.vm.network :forwarded_port, host: 3002, guest: 3002
 
   config.vm.provision :shell, :inline => 'apt-get update'
   config.vm.provision :shell, :inline => 'apt-get install -y build-essential ruby1.9.1-dev --no-upgrade'

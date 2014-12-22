@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
+  devise_for :users
+
   resources :accounts do
     get :audit, on: :member
   end
 
-  root 'home#index'
+  root 'accounts#index'
 
 end

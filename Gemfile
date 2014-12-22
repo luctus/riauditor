@@ -25,9 +25,11 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'haml'
 gem 'aws-sdk'
+gem 'devise'
 
 group :development, :test do
   gem 'haml-rails'
+  gem 'html2haml'
   gem 'sqlite3'
   gem 'poltergeist'
   gem 'rspec-rails', '~> 3.0.0.beta'

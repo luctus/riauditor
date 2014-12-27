@@ -1,4 +1,5 @@
 class Account < ActiveRecord::Base
+  belongs_to :user
 
   def get_instances
     az = Hash.new

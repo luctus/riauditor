@@ -1,11 +1,11 @@
 class AccountsController < ApplicationController
   before_action :set_account, only: [:show, :edit, :update, :destroy, :audit]
   before_action :authenticate_user!
-  
+
   # GET /accounts
   # GET /accounts.json
   def index
-    @accounts = Account.all
+    @accounts = Account.where(user: current_user)
   end
 
   # GET /accounts/1
@@ -26,6 +26,7 @@ class AccountsController < ApplicationController
   # POST /accounts.json
   def create
     @account = Account.new(account_params)
+    @account.user = current_user
 
     respond_to do |format|
       if @account.save

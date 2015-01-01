@@ -3,8 +3,6 @@ package "ruby1.9.1-dev"
 include_recipe "ruby_build"
 include_recipe "rbenv::user"
 
-include_recipe 'mysql::client'
-
 include_recipe "nginx::source"
 include_recipe "nginx::passenger"
 include_recipe "nginx::http_stub_status_module"

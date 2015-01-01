@@ -1,14 +1,9 @@
 {
   "app": {
     "server_name": "_",
-    "listen": "8080",
     "name": "riauditor",
     "dir": "/riauditor",
-    "env": "development",
-    "nginx": {
-      "vhosts_dir": "",
-      "user": ""
-    }
+    "env": "development"
   },
   "user": {
     "name": "vagrant"
@@ -20,7 +15,7 @@
     "init_style": "init",
     "install_method": "source",
     "client_max_body_size": "1m",
-    "port": "8080",
+    "port": "80",
     "source": {
       "modules": [
         "nginx::http_stub_status_module",
@@ -33,11 +28,6 @@
       "ruby": "/home/vagrant/.rbenv/versions/2.1.0/bin/ruby",
       "root": "/home/vagrant/.rbenv/versions/2.1.0/lib/ruby/gems/2.1.0/gems/passenger-4.0.29/"
     }
-  },
-  "mysql": {
-    "server_debian_password": "admin",
-    "server_root_password": "admin",
-    "server_repl_password": "admin"
   },
   "rbenv": {
     "user_installs": [

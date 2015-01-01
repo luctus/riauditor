@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
 
-gem 'mysql2'
+gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', github: 'rails/sass-rails'
 # Use Uglifier as compressor for JavaScript assets
@@ -30,7 +30,6 @@ gem 'devise'
 group :development, :test do
   gem 'haml-rails'
   gem 'html2haml'
-  gem 'sqlite3'
   gem 'poltergeist'
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'factory_girl_rails'

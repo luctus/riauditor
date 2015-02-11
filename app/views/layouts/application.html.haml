@@ -27,10 +27,10 @@
           %h1
             AWS Reserved Instaces Auditor
         .unit.one-third.text-right
-          - if user_signed_in?
+          - if current_user
             #current_user
               %p.user= current_user.email
-              = link_to 'Sign out', destroy_user_session_path, method: :delete, class:'foo'
+              = link_to 'Sign out', signout_path, id: 'sign_out'
       #content
         - if notice || alert
           .grid

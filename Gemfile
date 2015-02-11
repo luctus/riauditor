@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.7'
+gem 'rails', '4.2.0'
 
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -25,7 +25,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'haml'
 gem 'aws-sdk'
-gem 'devise'
+gem "omniauth-google-oauth2"
 
 group :development, :test do
   gem 'haml-rails'
@@ -38,8 +38,11 @@ group :development, :test do
   gem 'faker'
   gem 'spring'
   gem 'spring-commands-rspec'
-  gem 'capistrano', '2.12.0'
-  gem 'capistrano-rbenv'
-  gem 'capistrano-sidekiq'
+  gem 'capistrano', '~> 3.1'
+  gem 'capistrano-rbenv', '~> 2.0'
+  gem 'capistrano-rails',   '~> 1.1', require: false
+  gem 'capistrano-bundler', '~> 1.1', require: false
+  gem 'capistrano-passenger'
+  gem 'web-console', '~> 2.0'
   #gem 'berkshelf'
 end

@@ -1,4 +1,4 @@
-#AWS EC2 RI Auditor
+#AWS EC2 RI Auditor [![Stories in Ready](https://badge.waffle.io/luctus/riauditor.svg)](http://waffle.io/luctus/riauditor)
 
 
 Am I really using my AWS EC2 Reserved Instances? Audit your EC2 Reserved Instances. 

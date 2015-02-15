@@ -1,11 +1,14 @@
 class AccountsController < ApplicationController
   before_action :set_account, only: [:show, :edit, :update, :destroy, :audit]
-  
+
 
   # GET /accounts
   # GET /accounts.json
   def index
     @accounts = Account.where(user: current_user)
+    if @accounts.count == 0
+      redirect_to new_account_url
+    end
   end
 
   # GET /accounts/1
@@ -16,6 +19,7 @@ class AccountsController < ApplicationController
   # GET /accounts/new
   def new
     @account = Account.new
+    @total_accounts = Account.where(user: current_user).count
   end
 
   # GET /accounts/1/edit

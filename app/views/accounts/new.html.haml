@@ -7,6 +7,7 @@
   .unit.half
     = render :partial => "howto"
 
-.grid
-  .unit.whole
-    = link_to 'Back', accounts_path
+- if @total_accounts > 0
+  .grid
+    .unit.whole
+      = link_to 'Back', accounts_path

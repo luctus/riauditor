@@ -5,6 +5,16 @@ Am I really using my AWS EC2 Reserved Instances? Audit your EC2 Reserved Instanc
 Inspired by a [Matthew G Keller's post] (http://www.matthewgkeller.com/blog/2014/01/07/aws-ec2-reserved-instance-auditing)
 
 ## Development
+
+Make sure you add a `secrets.yml` file like this one inside the `config` folder:
+```yml
+development:
+  secret_key_base: ****alongandsecretkey****
+  google:
+    client_id: ****.apps.googleusercontent.com
+    client_secret: ****google_secret****
+```
+
 ```
 $ git clone [repo]
 $ cd riauditor

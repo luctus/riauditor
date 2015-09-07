@@ -16,5 +16,5 @@
 /tmp
 
 /vendor/bundle/
-/.vagrant
+/vagrant/.vagrant
 config/secrets.yml

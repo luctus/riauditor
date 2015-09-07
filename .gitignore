@@ -17,4 +17,3 @@
 
 /vendor/bundle/
 /vagrant/.vagrant
-config/secrets.yml

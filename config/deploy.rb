@@ -6,7 +6,7 @@ set :repo_url,  "git@github.com:luctus/riauditor.git"
 set :deploy_to, "/var/www/vhosts/riauditor"
 set :scm, :git
 set :branch, "master"
-set :user, "root"
+set :user, "riauditor"
 #set :use_sudo, false
 set :rails_env, "production"
 set :deploy_via, :copy

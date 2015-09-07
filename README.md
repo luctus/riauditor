@@ -35,3 +35,6 @@ riauditor$ touch tmp/restart.txt
 Point the hostname ```dev.riauditor.com``` to the ```33.33.33.112``` ip (in mac, ```vim /etc/hosts```)
 
 You are ready! visit: http://dev.riauditor.com in your browser
+
+You will see something like this:
+<img width="1207" alt="RI Auditor sample" src="https://cloud.githubusercontent.com/assets/365101/9720979/5dbe4c96-556a-11e5-9889-d0ed944d7b6f.png">

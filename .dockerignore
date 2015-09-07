@@ -1,0 +1,5 @@
+.git/
+docker/
+log/development.log
+*.sql
+vagrant/

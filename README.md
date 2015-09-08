@@ -38,3 +38,10 @@ You are ready! visit: http://dev.riauditor.com in your browser
 
 You will see something like this:
 <img width="1207" alt="RI Auditor sample" src="https://cloud.githubusercontent.com/assets/365101/9720979/5dbe4c96-556a-11e5-9889-d0ed944d7b6f.png">
+
+## Docker
+
+```
+docker run --name riauditor -v <riauditor-code>:/home/app/webapp -e RAILS_ENV=development -e PASSENGER_APP_ENV=development -e RACK_ENV=development -e GOOGLE_CLIENT_ID=XXXXXX -e GOOGLE_CLIENT_SECRET=XXXXXX -e VIRTUAL_HOST=dev.riauditor.com luctus/riauditor
+```
+

@@ -1,4 +1,4 @@
-FROM phusion/passenger-ruby22
+FROM phusion/passenger-ruby22:0.9.16
 
 # Set correct environment variables.
 ENV HOME /root
@@ -9,7 +9,7 @@ CMD ["/sbin/my_init"]
 
 RUN apt-get update
 
-RUN gem install mini_portile:0.6.2 nokogiri:1.6.6.2
+RUN gem install mini_portile:0.6.2 nokogiri:1.6.6.2 rails:4.2.0
 
 # Active nginx
 RUN rm -f /etc/service/nginx/down

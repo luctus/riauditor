@@ -1,12 +1,29 @@
-webapp:
-  build: .
-  name: riauditor
-  container_name: riauditor_webapp
-  working_dir: /home/app/webapp
-  ports:
-    - "80"
-  env_file:
-    - .env
-    - .env.webapp
-  volumes:
-    - .:/home/app/webapp
+version: "2"
+
+services:
+  riauditor:
+    build: .
+    working_dir: /home/app/webapp
+    ports:
+      - "80"
+    env_file:
+      - .env
+      - .env.webapp
+    volumes:
+      - .:/home/app/webapp
+    depends_on: riauditor-migrate
+
+  riauditor-migrate:
+    build: .
+    working_dir: /home/app/webapp
+    env_file:
+      - .env
+      - .env.webapp
+    volumes:
+      - .:/home/app/webapp
+    entrypoint: ./migrate.sh
+
+networks:
+  default:
+    external:
+      name: nginxproxy_default

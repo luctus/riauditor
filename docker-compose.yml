@@ -11,7 +11,8 @@ services:
       - .env.webapp
     volumes:
       - .:/home/app/webapp
-    depends_on: riauditor-migrate
+    depends_on:
+      - riauditor-migrate
 
   riauditor-migrate:
     build: .
@@ -27,3 +28,4 @@ networks:
   default:
     external:
       name: nginxproxy_default
+

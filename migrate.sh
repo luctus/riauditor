@@ -9,8 +9,7 @@
 # echo "MySQL started"
 
 echo "Creating development database"
-bundle exec rake db:migrate
+setuser app bundle exec rake db:migrate
 
 echo "Creating test database"
-RAILS_ENV=test bundle exec rake db:create db:migrate
-
+RAILS_ENV=test setuser app bundle exec rake db:create db:migrate

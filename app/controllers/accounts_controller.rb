@@ -68,13 +68,18 @@ class AccountsController < ApplicationController
   end
 
   def audit
-    @instances = Rails.cache.fetch("/#{@account.id}/instances", expires_in: 60.minutes){
-      @account.get_instances
-    }.sort.to_h
-    @reserved_instances = Rails.cache.fetch("/#{@account.id}/reserved_instances", expires_in: 60.minutes){
-      @account.get_reserved_instances
-    }.sort.to_h
-    @audited_reserved_instances = @account.audit(@instances, @reserved_instances)
+    @instances = {}
+    @reserved_instances = {}
+    @audited_reserved_instances = {}
+    Settings.regions.each do |region|
+      @instances[region] = Rails.cache.fetch("/#{@account.id}/instances/#{region}", expires_in: 60.minutes){
+        @account.get_instances(region)
+      }.sort.to_h
+      @reserved_instances[region] = Rails.cache.fetch("/#{@account.id}/reserved_instances/#{region}", expires_in: 60.minutes){
+        @account.get_reserved_instances(region)
+      }.sort.to_h
+      @audited_reserved_instances[region] = @account.audit(@instances[region], @reserved_instances[region])
+    end
   end
 
   private

@@ -1,7 +1,7 @@
 class Account < ActiveRecord::Base
   belongs_to :user
 
-  def get_instances(region = 'us-east-1')
+  def get_instances(region = "us-east-1")
     az = Hash.new
     AWS.config(access_key_id: access_key_id, secret_access_key: secret_access_key, region: region)
     ec2 = AWS.ec2
@@ -18,7 +18,7 @@ class Account < ActiveRecord::Base
     az
   end
 
-  def get_reserved_instances(region = 'us-east-1')
+  def get_reserved_instances(region = "us-east-1")
     az = Hash.new
     AWS.config(access_key_id: access_key_id, secret_access_key: secret_access_key, region: region)
     ec2 = AWS.ec2

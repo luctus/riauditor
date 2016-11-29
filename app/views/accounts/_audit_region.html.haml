@@ -21,11 +21,11 @@
             %td= "#{(@reserved_instances[region][az][type] rescue 0).to_i}"
             %td
               - if count - (@reserved_instances[region][az][type] rescue 0).to_i > 0
-                = "Reserve #{count - (@reserved_instances[region][az][type] rescue 0).to_i} more"
+                Reserve #{count - (@reserved_instances[region][az][type] rescue 0).to_i} more
               - elsif count - (@reserved_instances[region][az][type] rescue 0).to_i == 0
-                = "Perfect!"
+                Perfect!
               - else
-                = "Alert!"
+                Alert!
 
   .unit.half
     %h4 Reserved Instances
@@ -46,12 +46,12 @@
               - if @audited_reserved_instances[region][az][type] >= 0
                 = @audited_reserved_instances[region][az][type]
               - else
-                = "0"
+                0
             %td
               - if @audited_reserved_instances[region][az][type] > 0
-                = "Alert!"
+                Alert!
               - elsif @audited_reserved_instances[region][az][type] == 0
-                = "Perfect!"
+                Perfect!
               - else
-                = "Reserve #{-1*@audited_reserved_instances[region][az][type]} more!"
+                Reserve #{-1*@audited_reserved_instances[region][az][type]} more!
 

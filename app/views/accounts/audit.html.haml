@@ -2,58 +2,7 @@
   .unit.whole
     %h2 Auditing #{@account.name}
 
-.grid
-  .unit.half
-    %h3 Running instances
-    %table
-      %tr.text-left
-        %th Availability Zone
-        %th Instance Type
-        %th Count
-        %th Reserved
-        %th Comments
-      - @instances.each do |az, by_type|
-        - by_type.each do |type, count|
-          %tr
-            %td= az
-            %td= type
-            %td= count
-            %td= "#{(@reserved_instances[az][type] rescue 0).to_i}"
-            %td
-              - if count - (@reserved_instances[az][type] rescue 0).to_i > 0
-                = "Reserve #{count - (@reserved_instances[az][type] rescue 0).to_i} more"
-              - elsif count - (@reserved_instances[az][type] rescue 0).to_i == 0
-                = "Perfect!"
-              - else
-                = "Alert!"
-
-  .unit.half
-    %h3 Reserved Instances
-    %table
-      %tr.text-left
-        %th Availability Zone
-        %th Instance Type
-        %th Reserved
-        %th Not used
-        %th Comments
-      - @reserved_instances.each do |az, by_type|
-        - by_type.each do |type, count|
-          %tr
-            %td= az
-            %td= type
-            %td= count
-            %td
-              - if @audited_reserved_instances[az][type] >= 0
-                = @audited_reserved_instances[az][type]
-              - else
-                = "0"
-            %td
-              - if @audited_reserved_instances[az][type] > 0
-                = "Alert!"
-              - elsif @audited_reserved_instances[az][type] == 0
-                = "Perfect!"
-              - else
-                = "Reserve #{-1*@audited_reserved_instances[az][type]} more!"
+= render partial: "audit_region", collection: Settings.regions, as: :region
 
 .grid
   .unit.whole

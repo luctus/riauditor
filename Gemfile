@@ -26,6 +26,8 @@ gem 'haml'
 gem 'aws-sdk', '~> 1.62'
 gem "omniauth-google-oauth2"
 
+gem 'settingslogic'
+
 group :development, :test do
   gem 'haml-rails'
   gem 'html2haml'

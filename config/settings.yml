@@ -1,0 +1,15 @@
+defaults: &defaults
+  regions:
+    - us-east-1
+    - eu-west-1
+    - sa-east-1
+    - ap-southeast-1
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

@@ -21,7 +21,9 @@
             %td= "#{(@reserved_instances[region][az][type] rescue 0).to_i}"
             %td
               - if count - (@reserved_instances[region][az][type] rescue 0).to_i > 0
-                Reserve #{count - (@reserved_instances[region][az][type] rescue 0).to_i} more
+                Reserve
+                #{count - (@reserved_instances[region][az][type] rescue 0).to_i}
+                more
               - elsif count - (@reserved_instances[region][az][type] rescue 0).to_i == 0
                 Perfect!
               - else
@@ -53,5 +55,7 @@
               - elsif @audited_reserved_instances[region][az][type] == 0
                 Perfect!
               - else
-                Reserve #{-1*@audited_reserved_instances[region][az][type]} more!
+                Reserve
+                #{-1*@audited_reserved_instances[region][az][type]}
+                more!
 

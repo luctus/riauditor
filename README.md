@@ -5,7 +5,9 @@ Inspired by a [Matthew G Keller's post] (http://www.matthewgkeller.com/blog/2014
 
 ## Development
 
-Make sure you edit the `.env` file with your Google credentials. It should looks like this:
+You need to have Docker installed in your computer (if you are using a Mac, then I really recommend you to user [Dinghy](https://github.com/codekitchen/dinghy)) and the [nginx-proxy container](https://github.com/jwilder/nginx-proxy) up and running.
+
+Now, make sure you edit the `.env` file with your Google credentials. It should looks like this:
 ```
 RAILS_ENV=development
 PASSENGER_APP_ENV=development
@@ -14,6 +16,9 @@ GOOGLE_CLIENT_ID=<<REPLACE HERE>>
 GOOGLE_CLIENT_SECRET=<<REPLACE HERE>>
 ```
 
+Then, check the configuration file at `config/settings.yml` and make sure it contains all the AWS regions you work with. It initially contains `us-east-1`, `sa-east-1`, `eu-west-1`, and `ap-southeast-1`.
+
+Finaly, build, and start the container.
 ```
 riauditor$ docker-compose build
 riauditor$ docker-compose up -d

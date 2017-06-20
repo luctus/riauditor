@@ -10,7 +10,5 @@
       .name= account.name
       .access_key_id= account.access_key_id
       .actions
-        = link_to 'Show', account
-        = link_to 'Audit', audit_account_path(account)
-        = link_to 'Edit', edit_account_path(account)
-        = link_to 'Destroy', account, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        = link_to 'Details', account
+        = link_to 'Run the auditor', audit_account_path(account)

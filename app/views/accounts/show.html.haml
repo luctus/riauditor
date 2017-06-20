@@ -11,10 +11,11 @@
       %b Secret access key:
       = @account.secret_access_key
 
-    = link_to 'Edit', edit_account_path(@account)
-    \|
-    = link_to 'Back', accounts_path
+    .actions
+      = link_to 'Back', accounts_path
+      = link_to 'Edit', edit_account_path(@account)
+      = link_to 'Destroy', @account, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
   .unit.half
     %h2 What's next?
-    = link_to 'Run the auditor', audit_account_path(@account)
+    = link_to 'Run the auditor', audit_account_path(@account), class: 'button'

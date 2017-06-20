@@ -17,7 +17,7 @@ a{
   color: #fff;
 }
 a:hover{
-  color: #ddd;
+  color: #eee;
 }
 #wrapper {
   min-height:100%;
@@ -97,9 +97,20 @@ input[type="text"], input[type="email"], input[type="password"]{
   font-weight: lighter;
 }
 input[type="submit"], .button{
-  background: rgb(100, 52, 68);
+  background: rgba(67,203,265,0.5);
   color: white;
   padding: 10px 30px;
   border: 0;
   text-decoration: none;
+  font-family: 'Raleway';
+}
+input[type="submit"]:hover, .button:hover{
+  background: rgba(67,203,265,0.8);
+}
+
+.actions {
+  margin-top: 20px;
+  a {
+    margin-right: 10px;
+  }
 }
